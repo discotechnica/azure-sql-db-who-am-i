@@ -56,13 +56,13 @@ Get the user Object Id for your account (using AZ CLI and Ubuntu)
 uid=`az ad user show --id <ad-account-email> --query "id" -o tsv`; echo $uid
 ```
 
-the make the user the Azure SQL server admin:
+then make the user the Azure SQL server admin:
 
 ```shell
 az sql server ad-admin create -i $uid -u <ad-account-email> -g <resource-group> -s <azure-sql-server>.database.windows.net
 ```
 
-This is how it will look like at the end of thje process:
+This is how it will look like at the end of the process:
 
 ![Azure Portal showing Azure Active Director admin assigned to Azure SQL server](./docs/azure-sql-ad-admin.jpg)
 
